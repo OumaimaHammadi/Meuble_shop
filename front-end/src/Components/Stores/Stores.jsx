@@ -1,6 +1,8 @@
 import React , {useState,useEffect} from 'react'
 import './Stores.css'
 import Item from '../Item/item'
+const BASE_URL = process.env.REACT_APP_BASE_URL ;
+
 
 
 
