@@ -17,7 +17,7 @@ const changeHandler = (e)=>{
  const login = async() =>{
  console.log("Login Function Executed",formData)
    let responseData
-   await fetch('http://localhost:8000/api/v1/auth/login',{
+   await fetch('http://localhost:2000/api/v1/auth/login',{
         method:'POST',
         headers:{
           Accept:'application/json',
@@ -44,7 +44,7 @@ const changeHandler = (e)=>{
   const signup = async() =>{
    console.log("Signup Function Executed",formData)
    let responseData
-   await fetch('http://localhost:8000/api/v1/auth/signup',{
+   await fetch('http://localhost:2000/api/v1/auth/signup',{
         method:'POST',
         headers:{
           Accept:'application/json',

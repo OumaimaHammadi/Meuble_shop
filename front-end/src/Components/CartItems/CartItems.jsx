@@ -30,7 +30,7 @@ const CartItems = () => {
   return (
     <div className='cartitems'>
           <div className='cartitems-format-main'>
-                <p>Products</p>
+                <p>Furniture</p>
                 <p>Title</p>
                 <p>Price</p>
                 <p>Quantity</p>
@@ -65,7 +65,7 @@ const CartItems = () => {
               <h1>Cart Totals</h1>
               <div>
                  <div className="cartitems-total-item">
-                     <p>Subtatal</p>
+                     <p>Subtotal</p>
                      <p>${getTotalCartAmount()}</p>
                   </div>
                   <hr />

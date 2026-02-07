@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 
 
-const productSchema = new mongoose.Schema({
+const furnitureSchema = new mongoose.Schema({
 
 
     id:{
@@ -45,4 +45,4 @@ const productSchema = new mongoose.Schema({
 
 )
 
-export default mongoose.model("Product",productSchema);
+export default mongoose.model("Furniture",furnitureSchema);

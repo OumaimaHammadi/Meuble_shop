@@ -15,7 +15,7 @@ export const Sidebar = () => {
         >
           <div className="sidebar-item">
             <img src={add_product_icon} alt="" />
-            <p>Add Product</p>
+            <p>Add Furniture</p>
 
           </div>
 
@@ -26,7 +26,7 @@ export const Sidebar = () => {
         >
           <div className="sidebar-item">
             <img src={list_product_icon} alt="" />
-            <p>Product List </p>
+            <p>Furniture List </p>
 
 
           </div>

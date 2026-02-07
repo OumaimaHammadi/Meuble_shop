@@ -37,7 +37,7 @@ export const removefromcart = async(req,res)=>{
 
 
 export const getcart = async (req, res) => {
-  console.log("getCart", req.user); // 👈 Vérifie ce qui est reçu ici
+  console.log("getCart", req.user); 
   try {
     if (!req.user || !req.user.id) {
       return res.status(400).json({ error: "Utilisateur non authentifié" });

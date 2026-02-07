@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import './AddProduct.css'
+import './AddFurniture.css'
 import upload_area from '../../assets/upload_area.svg'
+
 
 const AddProduct = () => {
 
@@ -30,9 +31,9 @@ const Add_Product =async()=>{
   let product = productDetails
 
   let formData = new FormData()
-  formData.append('product',image)
+  formData.append('furniture',image)
 
-   await fetch('http://localhost:2000/api/v1/upload',{
+   await fetch(`${BASE_URL}/images/upload`,{
     method:'POST',
     headers:{
       Accept:'application/json',
@@ -45,14 +46,18 @@ const Add_Product =async()=>{
     responseData = data
   })
 
-  if(responseData.success){
-        product.image= responseData.image_url
+
+    if (responseData.success && responseData.data?.url) {
+
+         product.image = responseData.data.url;
+
+        // product.image= responseData.image_url
 
 
         console.log("product.image",product.image)
         console.log(product)
 
-        await fetch('http://localhost:2000/api/v1/products/addproduct',{
+        await fetch(`${BASE_URL}/products/addproduct`,{
         method:'POST',
         headers:{
           Accept:'application/json',
@@ -62,7 +67,7 @@ const Add_Product =async()=>{
         body:JSON.stringify(product)
 
       }).then((resp)=> resp.json()).then((data)=>{
-        data.success?alert("Product Added"):alert("Failed")
+        data.success?alert("Item Added"):alert("Failed")
            window.location.replace("/listproduct")
       })
   }
@@ -71,7 +76,7 @@ const Add_Product =async()=>{
   return (
     <div className='add-product'>
       <div className="addproduct-itemfield">
-        <p>Product title </p>
+        <p>Furniture title </p>
         <input value={productDetails.name} onChange={changeHandler} type="text" name='name' placeholder='type here'/>
       </div>
 
@@ -90,7 +95,7 @@ const Add_Product =async()=>{
 
         
         <div className="addproduct-itemfield">
-          <p>Product Category </p>
+          <p>Furniture Category </p>
           <select value={productDetails.category} onChange={changeHandler} name="category" className='add-product-selector' >
                 <option value="Living room">
                   Living room

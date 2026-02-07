@@ -1,23 +1,35 @@
 import React , {useState,useEffect} from 'react'
 import './NewProducts.css'
 import Item from '../Item/item'
+const BASE_URL = process.env.REACT_APP_BASE_URL ;
+
 
 const NewProducts = () => {
 
   const [new_product,setNew_product]= useState([])
 
-  useEffect(()=>{
-    fetch('http://localhost:2000/api/v1/newproducts')
-    .then((response)=> response.json())
-    .then((data)=>setNew_product(data))
+  // useEffect(()=>{
+  //   fetch(`${BASE_URL}/newproducts`)
 
-  },[])
+  //   .then((response)=> response.json())
+  //   .then((data)=>setNew_product(data))
+
+  // },[])
+
+
+    useEffect(() => {
+     fetch(`${BASE_URL}/newproducts`)
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.json();
+    })
+    .then(data => setNew_product(data))
+    .catch(error => console.error('Fetch error:', error));
+}, []);
 
   return (
-
-
     <div className='new-products'>
-    <h1>NEW PRODUCTS</h1>
+    <h1>NEW COLLECTIONS</h1>
     <hr />
 
     <div className='products'>
