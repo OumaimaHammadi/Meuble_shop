@@ -26,7 +26,7 @@ const ShopContextProvider=(props) => {
      .then((data)=>setAll_Product(data))
      
      if(localStorage.getItem('auth-token')){
-        fetch(`${BASE_URL}/products/allproducts/cartData/getcart`
+        fetch(`${BASE_URL}/cartData/getcart`
           ,{
           method:'POST',
           headers:{
