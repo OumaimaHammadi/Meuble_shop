@@ -9,7 +9,8 @@ const Stores = () => {
     const [store_product,setStore_product]= useState([])
     
       useEffect(()=>{
-        fetch('http://localhost:2000/api/v1/store')
+       
+        fetch(`${BASE_URL}/store`)
         .then((response)=> response.json())
         .then((data)=>setStore_product(data))
     
