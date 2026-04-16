@@ -65,13 +65,15 @@ const ShopContextProvider=(props) => {
     }
   }
 
-  const removeFromCart =(itemId)=>{
+  const removeFromCart =(itemId,id)=>{
     setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
   
   
    if(localStorage.getItem('auth-token')){
     
-       fetch(`${BASE_URL}/cartData/removefromcart`,{
+      //  fetch(`${BASE_URL}/cartData/removefromcart`,{
+      fetch('http://localhost:8000/api/v1/cartData/removefromcart',{
+
         method:'POST',
         headers:{
           Accept:'application/form-data',

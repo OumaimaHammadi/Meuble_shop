@@ -24,13 +24,11 @@ dotenv.config();
 ///////midleware
 const app =express()
 const port = process.env.PORT || 6000
-const corsOptions = {
-    
-}
+const corsOptions = {}
 
 ///////midleware
 
-app.use(express.json())
+app.use(express.json());
 app.use(cors(corsOptions))
 app.use(cookieParser())
 

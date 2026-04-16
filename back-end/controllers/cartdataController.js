@@ -25,6 +25,33 @@ export const removefromcart = async(req,res)=>{
 }
 
 
+
+export const removeproduct = async(req,res)=>{
+   const id =req.params.id
+
+    try{
+         await Product.findByIdAndDelete(id)
+
+
+        res.
+        status(200)
+        .json({
+            success:true,
+            message:'Successfully deleted',
+
+            })
+
+    }catch(err){
+
+        res.
+        status(500).
+        json({
+            success:false,
+            message:'Failed to  deleted from Controller'})
+
+    }
+}
+
 //Creating API for get product in cartdata
 
 //     export const getcart= async(req,res)=>{

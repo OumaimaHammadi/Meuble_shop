@@ -33,7 +33,7 @@ const Add_Product =async()=>{
   let formData = new FormData()
   formData.append('furniture',image)
 
-   await fetch(`${BASE_URL}/images/upload`,{
+   await fetch('http://localhost:2000/api/v1/images/upload',{
     method:'POST',
     headers:{
       Accept:'application/json',
@@ -57,7 +57,7 @@ const Add_Product =async()=>{
         console.log("product.image",product.image)
         console.log(product)
 
-        await fetch(`${BASE_URL}/products/addproduct`,{
+        await fetch('http://localhost:2000/api/v1/products/addproduct',{
         method:'POST',
         headers:{
           Accept:'application/json',
