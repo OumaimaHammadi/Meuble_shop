@@ -12,7 +12,7 @@ const ProductDisplay = (props) => {
 
   const handleAddToCart = () => {
     addToCart(product.id);
-    navigate('/cart');
+    navigate('/cart',{state: { menu: "cart" }})
   }
 
 

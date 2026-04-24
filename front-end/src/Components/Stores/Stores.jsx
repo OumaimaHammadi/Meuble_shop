@@ -40,7 +40,8 @@ const Stores = () => {
     </div>
 
                 <div className="pagination">
-            <a href='/store' >&laquo;</a>
+                              <a href='/store' >&laquo;</a>
+
             <a className="active" href='/store'>1</a>
 
             <a href='/store'>2</a>

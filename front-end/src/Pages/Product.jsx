@@ -9,8 +9,24 @@ const Product = () => {
   const {all_product}=useContext(ShopContext)
   const {itemId}=useParams()
 
-  const product =all_product.find((e)=>
-    e.id ===Number(itemId))
+
+
+
+  if (!all_product || !Array.isArray(all_product)) {
+    return <div>
+      Chargement...
+   
+
+</div>
+  }
+  const product = all_product.find((e)=>e.id === Number(itemId)
+)
+
+
+  
+    if (!product) {
+    return <div>Product introuvable</div>;
+    }
   
   return (
     <div>

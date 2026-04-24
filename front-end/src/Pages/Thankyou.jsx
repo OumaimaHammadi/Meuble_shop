@@ -7,7 +7,7 @@ const Thankyou = () => {
      const navigate = useNavigate();
 
   const handleAddToCart = () => {
-    navigate('/store');
+    navigate('/store',{state: { menu: "store" }});
   }
   return (
     <div className="thank-you-container">
