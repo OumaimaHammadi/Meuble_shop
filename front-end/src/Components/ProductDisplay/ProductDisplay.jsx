@@ -54,11 +54,14 @@ const ProductDisplay = (props) => {
       
 
           <div className="productdisplay-right-description">
-              Bioderma Sensibio H2O is a micellar water specially formulated 
-              for sensitive skin. It gently cleanses the face, eyes, and lips,
-              while effectively removing makeup and impurities. 
-              Enriched with soothing active ingredients, 
-              it respects the skin's natural balance without damaging it.
+          This is a modern upholstered armchair featuring a soft, 
+          light-blue fabric finish. It has a high, 
+          slightly winged backrest with button tufting for added style, 
+          along with padded armrests and a cushioned seat for comfort.
+           The chair stands on four angled wooden legs, giving it a clean, 
+           mid-century-inspired look that would fit well in a living room or
+            reading corner.
+
 
            </div>
 
